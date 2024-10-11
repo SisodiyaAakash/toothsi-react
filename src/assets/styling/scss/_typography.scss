@@ -1,0 +1,192 @@
+// Fonts
+@font-face {
+  font-family: $toothsi-font;
+  src: url("../fonts/../fonts/Manrope-ExtraBold.woff2") format("woff2");
+  font-weight: $extra-bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $toothsi-font;
+  src: url("../fonts/Manrope-Bold.woff2") format("woff2");
+  font-weight: $bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $toothsi-font;
+  src: url("../fonts/Manrope-Regular.woff2") format("woff2");
+  font-weight: $regular;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $toothsi-font;
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2");
+  font-weight: $medium;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Typography Styling
+body {
+  font-family: $toothsi-font;
+  font-weight: $regular;
+  @include typography(14px, 19px);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul li,
+  ol li,
+  input,
+  textarea,
+  select option {
+    font-family: $toothsi-font;
+    color: $dark-blue;
+    text-transform: capitalize;
+
+    * {
+      font-family: inherit;
+      font-weight: inherit;
+    }
+  }
+
+  button {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    font-weight: $bold;
+    @include typography(16px, 19px);
+    width: max-content;
+    text-align: center;
+    font-weight: $bold;
+    font-family: $toothsi-font;
+    text-transform: capitalize;
+
+    * {
+      font-family: inherit;
+      font-weight: inherit;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  p,
+  button {
+    margin: 0;
+    font-style: normal;
+  }
+
+  h1,
+  h2 {
+    font-weight: $extra-bold;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $bold;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h1 {
+    @include typography(30px, 41px);
+  }
+  h2 {
+    @include typography(24px, 33px);
+  }
+  h3 {
+    @include typography(22px, 30px);
+  }
+  h4 {
+    @include typography(18px, 24px);
+  }
+  h5 {
+    @include typography(16px, 22px);
+  }
+  h6 {
+    @include typography(14px, 19px);
+  }
+
+  p,
+  li {
+    font-weight: $regular;
+    @include typography(14px, 19px);
+  }
+
+  input,
+  textarea,
+  select,
+  label {
+    outline: none;
+    @include typography(14px, 19px);
+  }
+  input,
+  textarea {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid $dark-blue;
+    color: $dark-blue;
+
+    &::placeholder {
+      color: rgba($dark-blue, 0.6);
+    }
+  }
+
+  select {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+  }
+
+  // Class Based Typography
+  .body-text {
+    @extend p;
+
+    &-emphasized {
+      @extend p;
+      font-weight: $bold;
+    }
+  }
+  .card-title {
+    @extend h2;
+  }
+  .inner-card-title {
+    @extend h4;
+  }
+  .body-secondary-info {
+    @extend p;
+  }
+}

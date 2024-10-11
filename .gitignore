@@ -1,0 +1,10 @@
+/node_modules
+
+# production
+/build
+
+# Main Compiled Styling File
+src/assets/styling/main.css
+
+# Environment Variable
+.env

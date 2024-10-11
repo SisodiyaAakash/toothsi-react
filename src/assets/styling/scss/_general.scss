@@ -1,0 +1,148 @@
+html,
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  min-height: 100vh;
+
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+// Custom Scrollbar
+* {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $dark-blue;
+    transition: $transition;
+    border-radius: 3px;
+
+    &:hover {
+      background: $black;
+    }
+  }
+}
+
+// Font weights
+body {
+  .extra-light {
+    font-weight: $extra-light;
+  }
+  .light {
+    font-weight: $light;
+  }
+  .regular {
+    font-weight: $regular;
+  }
+  .medium {
+    font-weight: $medium;
+  }
+  .semi-bold {
+    font-weight: $semi-bold;
+  }
+  .bold {
+    font-weight: $bold;
+  }
+  .black-weight {
+    font-weight: $black-weight;
+  }
+}
+
+// Layout based classes
+.overflow-hidden {
+  overflow: hidden;
+}
+
+// Content based classes
+body {
+  .text-left {
+    text-align: left !important;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .text-right {
+    text-align: right !important;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+// Button
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: $dark-blue;
+  color: $white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: $violate;
+    transform: translateY(-2px);
+  }
+}
+
+// Table
+table,
+th,
+tr,
+td {
+  border: none;
+}
+table {
+  border-collapse: collapse;
+
+  thead,
+  tbody {
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+    }
+  }
+
+  thead {
+    tr {
+      background-color: $grey-2;
+      th {
+        &:first-child {
+          border-top-left-radius: 24px;
+          border-bottom-left-radius: 24px;
+        }
+        &:last-child {
+          border-top-right-radius: 24px;
+          border-bottom-right-radius: 24px;
+        }
+      }
+    }
+  }
+}
