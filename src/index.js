@@ -5,21 +5,25 @@ import "./assets/styling/main.min.css";
 import ProductList from "./sections/ProductList";
 import Cart from "./sections/Cart";
 import ThankYou from "./sections/ThankYou";
+import NotFound from "./sections/NotFound";
 
 const App = () => {
   const routes = [
     {
       path: "/",
       element: <ProductList />,
+      errorElement: <NotFound />,
     },
     {
       path: "/cart",
       element: <Cart />,
+      errorElement: <NotFound />,
     },
     {
       path: "/thank-you",
       element: <ThankYou />,
-    },
+      errorElement: <NotFound />,
+    }
   ];
 
   const router = createBrowserRouter(routes);

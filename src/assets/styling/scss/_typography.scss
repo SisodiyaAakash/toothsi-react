@@ -171,6 +171,12 @@ body {
     outline: none;
   }
 
+  input {
+    &[type="checkbox"] {
+      cursor: pointer;
+    }
+  }
+
   // Class Based Typography
   .body-text {
     @extend p;

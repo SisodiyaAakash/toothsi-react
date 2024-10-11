@@ -25,6 +25,10 @@ const Cart = () => {
    const handleCheckout = () => {
       navigate('/thank-you'); // Redirect to Thank You page
    };
+   
+   const handleReturnHome = () => {
+      navigate('/');
+   };
 
    return (
       <>
@@ -48,9 +52,18 @@ const Cart = () => {
                   </thead>
                   <tbody>
                      {cart.length === 0 ? (
-                        <tr>
-                           <td colSpan="5" className="text-center">Your cart is empty.</td>
-                        </tr>
+                        <>
+                           <tr>
+                              <td colSpan="5" className="text-center">Your cart is empty.</td>
+                           </tr>
+                           <tr>
+                              <td colSpan="5" className="text-center">
+                                 <button onClick={handleReturnHome}>
+                                    Return to Home
+                                 </button>
+                              </td>
+                           </tr>
+                        </>
                      ) : (
                         cart.map((item) => (
                            <tr key={item.id}>
