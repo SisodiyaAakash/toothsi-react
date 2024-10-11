@@ -4,20 +4,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./assets/styling/main.min.css";
 import ProductList from "./sections/ProductList";
 import Cart from "./sections/Cart";
+import ThankYou from "./sections/ThankYou";
 
 const App = () => {
   const routes = [
     {
       path: "/",
-      element: (
-        <ProductList />
-      ),
+      element: <ProductList />,
     },
     {
       path: "/cart",
-      element: (
-        <Cart />
-      ),
+      element: <Cart />,
+    },
+    {
+      path: "/thank-you",
+      element: <ThankYou />,
     },
   ];
 

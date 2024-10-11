@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Cart = () => {
    const location = useLocation();
+   const navigate = useNavigate();
    const cartItems = location.state?.cartItems || [];
    const [cart, setCart] = useState(cartItems);
 
@@ -19,6 +20,10 @@ const Cart = () => {
          item.id === productId ? { ...item, quantity: parseInt(quantity) } : item
       );
       setCart(updatedCart);
+   };
+
+   const handleCheckout = () => {
+      navigate('/thank-you'); // Redirect to Thank You page
    };
 
    return (
@@ -72,7 +77,7 @@ const Cart = () => {
                <div className="checkout-card">
                   <h3>Checkout Summary</h3>
                   <p>Total: <strong>${calculateTotal()}</strong></p>
-                  <button className="checkout-button">Proceed to Checkout</button>
+                  <button className="checkout-button" onClick={handleCheckout}>Proceed to Checkout</button>
                </div>
             )}
          </div>
